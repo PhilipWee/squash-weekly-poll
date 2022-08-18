@@ -12,8 +12,11 @@ Run `test.js` to run the cron function of the bot
 
 Edit `serverless.yml` to change the frequency of the cron job
 
-
-
+You need an `.env` something like
+```
+BOT_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+SQUASH_GROUP_ID=YYYYYYYY
+```
 <!--
 title: 'AWS Node Scheduled Cron example in NodeJS'
 description: 'This is an example of creating a function that runs as a cron job using the serverless ''schedule'' event.'
@@ -59,7 +62,6 @@ functions:
 
 Detailed information about rate expressions is available in official [AWS docs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#RateExpressions).
 
-
 ### Cron expressions syntax
 
 ```pseudo
@@ -68,14 +70,14 @@ cron(Minutes Hours Day-of-month Month Day-of-week Year)
 
 All fields are required and time zone is UTC only.
 
-| Field         | Values         | Wildcards     |
-| ------------- |:--------------:|:-------------:|
-| Minutes       | 0-59           | , - * /       |
-| Hours         | 0-23           | , - * /       |
-| Day-of-month  | 1-31           | , - * ? / L W |
-| Month         | 1-12 or JAN-DEC| , - * /       |
-| Day-of-week   | 1-7 or SUN-SAT | , - * ? / L # |
-| Year          | 192199      | , - * /       |
+| Field        |     Values      |   Wildcards    |
+| ------------ | :-------------: | :------------: |
+| Minutes      |      0-59       |    , - \* /    |
+| Hours        |      0-23       |    , - \* /    |
+| Day-of-month |      1-31       | , - \* ? / L W |
+| Month        | 1-12 or JAN-DEC |    , - \* /    |
+| Day-of-week  | 1-7 or SUN-SAT  | , - \* ? / L # |
+| Year         |     192199      |    , - \* /    |
 
 In below example, we use `cron` syntax to define `schedule` event that will trigger our `cronHandler` function every second minute every Monday through Friday
 
@@ -88,7 +90,6 @@ functions:
 ```
 
 Detailed information about cron expressions in available in official [AWS docs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions).
-
 
 ## Usage
 
