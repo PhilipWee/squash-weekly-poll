@@ -1,0 +1,21 @@
+{
+  "name": "squash-weekly-poll",
+  "version": "1.0.0",
+  "description": "Example of creating a function that runs as a cron job using the serverless `schedule` event",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "npx serverless offline",
+    "dev": "npx concurrently \"npm:start\" \"npm:watch\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "dotenv": "^16.0.1",
+    "serverless-offline": "^9.2.4"
+  },
+  "dependencies": {
+    "telegraf": "^4.8.6"
+  }
+}

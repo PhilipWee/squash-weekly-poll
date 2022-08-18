@@ -1,0 +1,27 @@
+org: philipwee
+app: squash-weekly-poll
+service: squash-weekly-poll
+
+frameworkVersion: '3'
+
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+useDotenv: true
+
+functions:
+  rateHandler:
+    handler: dist/handler.run
+    events:
+      # Invoke Lambda function every minute
+      - schedule: rate(1 minute)
+  cronHandler:
+    handler: dist/handler.run
+    events:
+      # Invoke Lambda function every 2nd minute from Mon-Fri
+      - schedule: cron(0/2 * ? * MON-FRI *)
+
+plugins:
+  - serverless-offline
