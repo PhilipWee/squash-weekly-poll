@@ -15,13 +15,8 @@ functions:
   rateHandler:
     handler: dist/handler.run
     events:
-      # Invoke Lambda function every minute
-      - schedule: rate(1 minute)
-  cronHandler:
-    handler: dist/handler.run
-    events:
-      # Invoke Lambda function every 2nd minute from Mon-Fri
-      - schedule: cron(0/2 * ? * MON-FRI *)
+      # 9am every saturday
+      - schedule: cron(0 9 ? * SAT *)
 
 plugins:
   - serverless-offline

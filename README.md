@@ -1,3 +1,19 @@
+# SUTD Squash bot
+
+Sponsored by [firejet](www.firejet.io)
+
+# Usage
+
+Install everything with `yarn`
+
+Run `getMeta.js` to start the bot, then add the bot to your group and run `/start` to get the chatId
+
+Run `test.js` to run the cron function of the bot
+
+Edit `serverless.yml` to change the frequency of the cron job
+
+
+
 <!--
 title: 'AWS Node Scheduled Cron example in NodeJS'
 description: 'This is an example of creating a function that runs as a cron job using the serverless ''schedule'' event.'

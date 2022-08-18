@@ -8,14 +8,17 @@
     "build": "tsc",
     "watch": "tsc --watch",
     "start": "npx serverless offline",
-    "dev": "npx concurrently \"npm:start\" \"npm:watch\""
+    "dev": "npx concurrently \"npm:start\" \"npm:watch\"",
+    "deploy": "tsc && npx serverless deploy"
   },
   "devDependencies": {
+    "@types/node-fetch": "^2.6.2",
     "concurrently": "^7.3.0",
     "dotenv": "^16.0.1",
     "serverless-offline": "^9.2.4"
   },
   "dependencies": {
+    "node-fetch": "2",
     "telegraf": "^4.8.6"
   }
 }
