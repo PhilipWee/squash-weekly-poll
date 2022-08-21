@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
-const URL = process.env.URL;
+const URL = `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`;
 
 export async function run() {
   if (!process.env.BOT_TOKEN) {
