@@ -9,6 +9,7 @@ const startWeeklyPoll: Parameters<Telegraf["command"]>[1] = (ctx) => {
     ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "🎉"],
     {
       is_anonymous: false,
+      allows_multiple_answers: true,
     }
   );
 };
